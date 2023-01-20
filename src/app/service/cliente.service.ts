@@ -16,7 +16,7 @@ export class ClienteService {
   ) { }
 
   create(cliente: ClienteModel): Observable<ClienteModel>{
-    return this.http.post(this.url+"/clientes",{
+    return this.http.post(this.url+"clientes",{
       nombre: cliente.nombre,
       apellido: cliente.apellido,
       identificacion: cliente.identificacion,
