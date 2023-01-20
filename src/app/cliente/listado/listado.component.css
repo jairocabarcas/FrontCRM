@@ -1,0 +1,36 @@
+#titulo{
+    color: #006191;
+}
+#fondo{
+    background-color: #006191;
+    color: white;
+}
+.input-wrapper {
+    position: relative;
+    width: 271px; 
+ }
+  
+ .input {
+    box-sizing: border-box;
+    color: #191919;
+    width: 100%;
+ }
+  
+ .input.password {
+    padding: 15px 35px 15px 15px;
+ }
+  
+ .input-icon {
+    color: #191919;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 12px;
+    top: 65%;
+    transform: translateY(-40%);
+ }
+  
+ .input-icon.password {
+    left: unset;
+    right: 30px;
+ }

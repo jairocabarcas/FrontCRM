@@ -1,0 +1,97 @@
+<div class="container-sm ">
+    <div class="Card row justify-content-center">
+        <div class="col-sm .titulo"  id="titulo">
+            <h5 class="card-title .tema" style="margin-top: 20px; margin-bottom: 10px;">Actualizar contacto</h5>
+            <form  [formGroup]="fgValidador" #formRegister="ngForm" (ngSubmit)="update()" >
+                <div class="row justify-content-center border rounded-3 " 
+                style="background-color: #f6f6f6cb">
+                    <div class="form-group row">
+                        <div class="col-sm input-wrapper" style="margin-top: 13px;">
+                            <input type="text" class="form-control input" placeholder="Nombre" name="nombre"
+                                [(ngModel)]="cliente.nombre" required="required" formControlName="nombre">
+                            <img src="../assets/imagenes/edit.png" alt="" class="input-icon password">
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm input-wrapper" style="margin-top: 13px;">
+                            <input type="text" class="form-control input" placeholder="Apellido" name="apellido"
+                                [(ngModel)]="cliente.apellido" required="required" formControlName="apellido">
+                                <img src="../assets/imagenes/edit.png" alt="" class="input-icon password">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm input-wrapper " style="margin-top: 13px;">
+                            <input type="text" class="form-control input" placeholder="Identificación" name="identificacion"
+                                [(ngModel)]="cliente.identificacion" required="required" formControlName="identificacion">
+                                <img src="../assets/imagenes/edit.png" alt="" class="input-icon password">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm input-wrapper" style="margin-top: 13px;">
+                            <input type="tel" class="form-control input " placeholder="telefono" name="telefono"
+                                [(ngModel)]="cliente.telefono" required="required" formControlName="telefono">
+                                <img src="../assets/imagenes/edit.png" alt="" class="input-icon password">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm input-wrapper" style="margin-top: 13px;">
+                            <input type="tel" class="form-control input" placeholder="E-mail" name="email"
+                                [(ngModel)]="cliente.email" required="required" formControlName="email">
+                                <img src="../assets/imagenes/edit.png" alt="" class="input-icon password">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm" style="margin-top: 13px;" >
+                            <input type="date" class="form-control" placeholder="Fecha de Nacimiento"
+                                name="fechaNacimiento" [(ngModel)]="cliente.fechaNacimiento" required="required"
+                                formControlName="fechaNacimiento">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm input-wrapper" style="margin-top: 13px;">
+                            <input type="text" class="form-control input" placeholder="Direccion" name="direccion"
+                                [(ngModel)]="cliente.direccion" required="required" formControlName="direccion">
+                                <img src="../assets/imagenes/edit.png" alt="" class="input-icon password">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm" style="margin-top: 13px;" >
+                            <label for="tipo">Tipo del cliente</label>
+                            <select class="form-select" aria-label="Default" 
+                            name="tipo" required="required" [(ngModel)]="cliente.tipo" formControlName="tipo" >
+                                <option  *ngFor="let tipo of tiposPredeterminado" [value]="tipo">{{tipo}}</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm" style="margin-top: 13px; margin-bottom: 13px;" >
+                            <label for="origen">Origen del cliente</label>
+                            <select  class="form-select" aria-label="Default" 
+                            name="origen" required="required" [(ngModel)]="cliente.origen" formControlName="origen" >
+                            <option  *ngFor="let origen of origenes" [value]="origen">{{origen}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row justify-content-center">
+                    <div class="col" style="margin-top: 13px;">
+                        <button type="button" class="col-12 btn btn-secondary border rounded-4" (click)="cancelar()">Cancelar</button>
+                    </div>
+                    <div class="col " style="margin-top: 13px;">
+                        <button type="submit" class="col-12 btn btn-success border rounded-4" role="button">Agregar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

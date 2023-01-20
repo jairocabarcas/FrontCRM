@@ -1,0 +1,63 @@
+<div class="container-sm ">
+    <div class="Card row justify-content-center">
+        <div class="col-sm .titulo ">
+            <div class="form-control" style="border-color: white;">
+                <form class="d-flex " role="search">
+                    <div class="col input-wrapper ">
+                        <input class="form-control me-2 input" type="text" placeholder="Buscar Contacto"
+                            aria-label="Search" [(ngModel)]="findCliente" [value]="findCliente" name="search"
+                            style="background-color: #f6f6f6; margin-top: 20px;">
+                        <img src="../assets/imagenes/search.png" alt="" class="input-icon password">
+                    </div>
+                </form>
+            </div>
+            <h4 class="card-title .tema" id="titulo">Lista de Contactos</h4>
+
+            <div class="row justify-content-center border rounded-3 " style="background-color: #f6f6f6">
+                <div class="col">
+                    <div class="row" *ngFor="  let cliente of clientes  | filtroContactos:findCliente ">
+                        <div class="col-9">
+                            <div class="row">
+                                <div class="col">
+                                    <h6 style="margin-top: 8px; margin-bottom: 0px;">{{cliente.nombre+"
+                                        "+cliente.apellido}}</h6>
+                                    <span id="titulo"> {{cliente.telefono}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1 align-self-center">
+                            <div class="row justify-content-center">
+                                <div class="col">
+                                    <a href="cliente/actualizar/{{cliente.id}}"><img src="../assets/imagenes/edit.png"
+                                            height="15px"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1 align-self-center">
+                            <div class="row justify-content-center">
+                                <div class="col">
+                                    <a href=""><img src="../assets/imagenes/check.png" height="15px"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1 align-self-center">
+                            <div class="row">
+                                <div class="col">
+                                    <a href=""><img src="../assets/imagenes/delete.png" height="15px"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col " style="margin-top: 13px;">
+                <form action="" (ngSubmit)="agregar()">
+                    <button type="submit" class="col-12 border rounded-4" role="button" id="fondo">Agregar <img
+                            src="../assets/imagenes/add.png" height="25px"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
