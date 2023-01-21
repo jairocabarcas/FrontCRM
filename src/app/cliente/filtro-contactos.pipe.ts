@@ -11,8 +11,8 @@ export class FiltroContactosPipe implements PipeTransform {
     
     for(const post of value){
       console.log(arg)
-      let nombre = ' '+post.nombre+' '+post.apellido
-      if((post.nombre.indexOf(arg, 0)>-1)){
+      let nombre = post.nombre+' '+post.apellido
+      if((post.nombre.toLowerCase().indexOf(arg.toLowerCase(), 0)>-1)){
         resultados.push(post);
       }
     }
